@@ -634,27 +634,27 @@ MVC（Model-View-Controller，模型-视图-控制器）是一个存在**服务�
 
 ![](./img/mvc.png)
 
-**2、模型特点对比Structs2**
+**2、模型特点对比Struts2**
 
 1. 框架机制：
    - MVC：采用Servlet实现
-   - Structs2：采用Filter实现
+   - Struts2：采用Filter实现
 2. 拦截机制：
    - MVC：
      1. 采用方法级拦截，一个方法对应一个request上下文。方法基本独立，独享request和response数据。每一个方法同时又和一个url对应，参数的传递是直接注入到方法中，是方法所独有的。
      2. 默认对所有的请求，只会创建一个Controller，同时没有共享的属性 保证了线程安全。
-   - Structs2：
+   - Struts2：
      1. 采用类级别拦截，每次请求就会创建一个Action。
      2. 一个Action对应一个request和response上下文，参数是多个方法共享的。
      3. Action一个方法可以对应一个url，其类属性被所有方法共享。无法使用注解或其他方式标识其属性方法。
 3. 性能方面：
    - Spring MVC实现了零配置。
-   - Structs2每次需要实例化一个Action，性能和效率不如MVC
+   - Struts2每次需要实例化一个Action，性能和效率不如MVC
 4. 配置方面：Spring MVC和Spring是无缝的，项目的管理和安全比Struts2更高。
 5. 设计思想：Spring MVC比较谨慎，是在Servlet上进行扩展的。Struts2更加符合OOP的编程思想。
 6. 集成方面：
    - String MVC继承了Ajax，使用非常方便，只需要一个注解@ResponseBody就可以实现
-   - Structs2拦截器继承了Ajax，在Action中处理时一般需要安装插件或者自己写代码继承进去。
+   - Struts2拦截器继承了Ajax，在Action中处理时一般需要安装插件或者自己写代码继承进去。
 
 **3、体系结构（论述题+究极重点）**
 
