@@ -356,7 +356,7 @@ JSP主要由**指令标签、HTML语句、注释、嵌入Java代码、JSP动作�
    - 生命周期：用户创建到手动销毁或超过会话时间
    - 方法：
      - 获取指定属性信息：session.getAttribute(name)
-     - 获取session中所有属性对象：session.getAttributeNames()  // 相当于就是把json的value全部拿了
+     - 获取session中所有属性对象：(枚举类型)Enumeration attributes = session.getAttributeNames()  // 相当于就是把json的value全部拿了
      - 获取session对象的创建时间：session.getCreationTime()
      - 获取session对象的ID：session.getId()
      - 设置session对象信息：session.setAttribute(key,value)
@@ -371,7 +371,7 @@ JSP主要由**指令标签、HTML语句、注释、嵌入Java代码、JSP动作�
    - 生命周期：服务器开启到结束
    - 方法：
      - 获取保存的关键字信息：obj = application.getAttribute(name)
-     - 获取所有属性名：String[] strs = application.getAttributeNames()
+     - 获取所有属性名：(枚举类型)Enumeration attributes = application.getAttributeNames()
      - 保存一条信息：application.setAttribute(key,value)
      - 删除一条信息：application.removeAttribute(name)
      - 获取某条信息的初始值（设置的值）：String str = application.getInitParameter(name)
@@ -379,7 +379,7 @@ JSP主要由**指令标签、HTML语句、注释、嵌入Java代码、JSP动作�
    1. 作用域：
       - request作为请求接收者，每次接受一条请求以后到下一次请求之前信息都存在。为此作用域为一次请求
       - response作为请求返回信息，返回的信息给请求的jsp页面，为此该信息的作用域则是发起请求的jsp页面
-      - session作为记录每一个用户与服务器会话的对象，作用域为超过预设的会话时间就会被销毁。
+      - session作为记录每一个用户与服务器会话的对象，作用域为超过预设的会话时间就会被销毁。为此作用域为一次会话。
       - application作为服务器整体配置的对象，作用域则设置为从服务器开始运行到结束运行。
    2. 方法：
       - request、response以协议为基础，为此他们面向的是参数Parameter、头信息Header
@@ -390,7 +390,7 @@ JSP主要由**指令标签、HTML语句、注释、嵌入Java代码、JSP动作�
 
 ***
 
-### Servlet
+###  Servlet
 
 **1、Servlet概念（名词解释）**
 
@@ -548,7 +548,7 @@ JDBC是一种底层API，在访问数据库时需要在业务逻辑中直接嵌�
 2. **创建数据库连接**
 
    - java.sql.DriverManager(驱动程序管理器)负责建立和管理数据库连接，
-     通过DeiverManager类的静态方法getConnection(String url,String user,String password)可以建立数据库连接。
+     通过DriverManager类的静态方法getConnection(String url,String user,String password)可以建立数据库连接。
 
    ```java
    try {
@@ -753,3 +753,225 @@ SpringMVC在项目中拦截用户请求，它的核心Servlet即DispatcherServle
 
 mybatis是对jdbc的封装，它让数据库底层操作变的透明。mybatis的操作都是围绕一个sqlSessionFactory实例展开的。mybatis通过配置文件关联到各实体类的Mapper文件，Mapper文件中配置了每个类对数据库所需进行的sql语句映射。在每次与数据库交互时，通过sqlSessionFactory拿到一个sqlSession，再执行sql命令。
 
+
+
+***
+
+## 题目预测
+
+### 一、名词解释
+
+1. **HTML（重点）：**html是一种超文本语言，在因特网上常见的标注性语言。HTML是通过浏览器翻译，将网页中的内容呈现给用户。
+2. **DOM：**dom是html和xml文档的编程接口。它提供了对文档的结构化表述，并定义了一种方式修改文档的结构、样式、内容。
+3. **Java Servlet：**java servlet是运行在web服务器或应用服务器上的程序，它是作为来自Web浏览器或其他HTTP客户端的请求和HTTP服务器上的数据库或应用程序之间的中间层。
+4. **Servlet（重点）：**Servlet是使用Java Servlet接口的运行在Web应用服务器上的Java程序。可以对Web浏览器或其他HTTP客户端的请求进行处理。
+5. **Web（重点）：**Web在计算机网页开发设计中就是网页的意思。网页是网站中的一个页面，通常是HTML格式的。网页可以展示文字、图片、媒体等，需要通过浏览器阅读。
+6. **JavaScript：**javascript是一种基于对象和事件驱动并具有安全性能的解释型脚本语言，在Web应用中得到了非常广泛的应用。
+7. **JSP：**jsp是由Sun公司倡导、许多公司参与而建立的动态网页技术标准，它是在HTML代码中嵌入Java代码片段和JSP标签组成。
+8. **JDBC（重点）：**jdbc是一套用于执行SQL语句的API类包，由一组用Java语言编写的类和接口组成。JDBC提供了一种标准的应用程序设计接口，通过它可以访问各类关系型数据库。
+9. **SSM（重点）：**ssm框架集由spring、mybatis两个开源框架整合而成（spring mvc是spring中的部分内容），常作为数据源较简单的Web项目的框架。
+10. **CSS：**css（层叠样式表）是W3C协会为弥补HTML在显示属性设定上的不足而制定的一套扩展样式标准。
+11. **Ajax（重点）**：ajax的意思是异步的javascript和xml，ajax并不是一门新的语言或技术，它是javascript、xml、css、dom等多种已有的技术的组合，可以实现客户端的异步请求操作，进而在不需要刷新页面的情况下与服务器进行通信，减少等待时间，减轻服务器和带宽的负担，提供更好的服务响应。
+    - 简洁版：ajax是异步的javascript和xml，是由javascript、xml、css、dom等多种技术组合而成，使得不需要刷新页面的情况下与服务器交互，修改页面内容。可以减轻服务器负担、提升服务。
+
+### 四、论述题
+
+#### 1.什么是SSM？其三大框架的作用是什么？
+
+**什么是SSM？**
+
+SSM（Spring+SpringMVC+MyBatis）框架集由Spring、MyBatis两个开源框架整合而成（SpringMVC是Spring中的部分内容），常作为数据源较简单的web项目的框架。
+
+**Spring**
+
+Spring就像是整个项目中装配bean的大工厂，在配置文件中可以指定使用特定的参数去调用实体类的构造方法来实例化对象。也可以称之为项目中的粘合剂。
+
+Spring的核心思想是IoC（控制反转），即不再需要程序员去显式地`new`一个对象，而是让Spring框架帮你来完成这一切。
+
+**SpringMVC**
+
+SpringMVC在项目中拦截用户请求，它的核心Servlet即DispatcherServlet承担中介或是前台这样的职责，将用户请求通过HandlerMapping去匹配Controller，Controller就是具体对应请求所执行的操作。SpringMVC相当于SSH框架中struts。
+
+**mybatis**
+
+mybatis是对jdbc的封装，它让数据库底层操作变的透明。mybatis的操作都是围绕一个sqlSessionFactory实例展开的。mybatis通过配置文件关联到各实体类的Mapper文件，Mapper文件中配置了每个类对数据库所需进行的sql语句映射。在每次与数据库交互时，通过sqlSessionFactory拿到一个sqlSession，再执行sql命令。
+
+#### 2.解释MVC设计模式的系统结构？
+
+**步骤：**
+
+1. **HTTP请求**
+
+   客户端发出一个HTTP请求，Web应用服务器接收这个请求。如果请求匹配DispatcherServlet的请求映射路径，就将之转发给DispatcherServlet处理。
+
+2. **寻找处理器**
+
+   DispatcherServlet接受到请求后，将根据请求的信息及HandlerMapping的配置找到处理请求的处理器（Controller）
+
+3. **调用处理器**
+
+   DispatcherServlet把请求交给处理器。
+
+4. **调用模型处理业务**
+
+   处理器调用服务层方法处理业务逻辑。
+
+5. **得到处理结果**
+
+   处理器的返回结果为ModelAndView
+
+6. **处理视图映射**
+
+   DispatcherServlet查询一个或多个ViewResoler视图解析器，找到ModelAndView指定的视图。
+
+7. **将模型数据传给View显示**
+
+8. **HTTP相应**
+
+   将结果显示到客户端
+
+![](./img/mvc-logi.png)
+
+#### 3.JDBC的步骤有哪些？它有哪些优缺点？
+
+**JDBC的优缺点**
+
+- 优点
+
+  1. JDBC与ODBC十分相似，便于软件开发人员理解。（理解简单）
+  2. JDBC使软件开发人员从复杂的驱动程序编写工作中解脱出来，可以完全专注于业务逻辑的开发（有统一驱动可以用）
+  3. JDBC支持多种关系型数据库，大大增加了软件的可移植性。（支持多种关系型数据库）
+  4. JDBC API是面向对象的，软件开发人员可以将常用的方法进行二次封装，从而提高代码的重用性。（面向对象可以二次封装）
+
+- 缺点
+
+  1. 通过JDBC访问数据库时**速度**将受到一定影响
+  2. 虽然JDBC API是面向对象的，但通过JDBC访问数据库依然是**面向关系**的。
+  3. JDBC提供了对不同厂家的产品的支持，这将对**数据源**带来影响。
+
+  
+
+**JDBC连接数据库五大步骤**
+
+过程会用到的对象有：Connection connection，Statement statement。
+
+1. **加载JDBC驱动程序**
+
+   - 连接数据库之前，首先要加载数据库的驱动至JVM，通过java.lang.Class类的静态方法forName(String className)实现。
+
+   ```java
+   try{
+       Class.forName("com.mysql.jdbc.Driver"); //8.0版本是com.mysql.cj.jdbc.Driver类
+   }catch(ClassNotFoundException e){
+       e.printfStackTrace();
+   }
+   ```
+
+2. **创建数据库连接**
+
+   - java.sql.DriverManager(驱动程序管理器)负责建立和管理数据库连接，
+     通过DriverManager类的静态方法getConnection(String url,String user,String password)可以建立数据库连接。
+
+   ```java
+   try {
+       connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/dataBase", user, password);
+   } catch (SQLException e) {
+       System.out.println("密码错误！");
+   }
+   ```
+
+3. **执行SQL语句**
+
+   - 建立连接后返回Connection实例对象用conn接收后，使用conn创建Statement实例对象。用于执行sql语句
+   - Statement类型包括：
+     1. Statement实例：用来执行静态SQL语句
+     2. PreparedStatement实例：增加执行动态SQL语句的功能 （感觉不考
+     3. CallableStatement实例：增加执行数据库存储过程的功能 （感觉不考
+     4. PreparedStatement继承了Statement，CallableStatement继承了PreparedStatement
+
+   ```java
+   statement = connection.createStatement();
+   ```
+
+4. **获取查询结果**
+
+   - 通过Statement接口的executeUpdate(String sql)或executeQuery(String sql)方法可以执行SQL语句，并返回执行结果。
+   - 方法：
+     - ResultSet result = stmt.executeQuery(String sql) ：执行静态select语句，返回一个永远不为null的ResultSet实例。
+     - int number = stmt.executeUpdate(String sql) : 执行一个静态的insert、update或delete语句，并返回更新记录的条数。
+
+   ```java
+   String sql = "select * from message";
+   ArrayList<Mail> list = new ArrayList<>();
+   ResultSet resultSet;
+   try {
+       resultSet = stmt.executeQuery(sql);
+       while (rs.next()) {
+           Mail m = new Mail(rs.getString("username"), rs.getString("phoneNumber"), rs.getString("type"));
+           list.add(m);
+       }
+   } catch (SQLException e) {
+       e.printStackTrace();
+   }
+   ```
+
+   
+
+5. **关闭连接**
+
+   - 在建立Connection、Statement和ResultSet实例时均需占用一定的数据库和JDBC资源，所以在每次访问数据库结束后，应该及时销毁这些实例。
+   - 顺序：一个栈结构
+     1. ResultSet
+     2. Statement
+     3. Connection
+
+   ```java
+   resultSet.close();
+   statement.close();
+   connection.close();
+   ```
+
+
+
+
+#### 4.Web体系结构有哪些？他们的区别在哪些方面？
+
+**1、C/S体系结构**
+
+**概念（名词解释）**：C/S即**客户端/服务器**结构，服务器常采用**高性能的PC或工作站**，并采用**大型数据库系统**（Oracle或SQL Server）。
+
+客户端需要安装**专用的客户端软件**。（在**2000年前**，C/S结构占据网络程序开放领域的主流）
+
+![](https://upload-images.jianshu.io/upload_images/24135408-e46d9dc6426b7734.png?imageMogr2/auto-orient/strip|imageView2/2/w/672/format/webp)
+
+**2、B/S体系结构**
+
+
+
+**概念（名词解释）**：B/S即**浏览器/服务器**结构，客户端**不需要**开发任何用户界面，而**统一采用浏览器**，通过**Web浏览器向Web服务器发送请求**。
+
+由**Web服务器进行处理**，并将处理结果逐级传回客户端。这种结构**利用不断成熟和普及的浏览器技术**实现原来需要复杂专用软件才能实现的强大功能，
+
+从而**节约了开发成本**，是一种全新的软件体系结构。这种体系结构已经成为当今应用软件的**首选**体系结构。
+
+![](https://upload-images.jianshu.io/upload_images/24135408-c95df9e128c225bf.png?imageMogr2/auto-orient/strip|imageView2/2/w/734/format/webp)
+
+**3、体系结构的比较（优缺点）**
+
+1. 开发和维护成本方面
+
+   - **C/S结构**的开发和维护成本都**比B/S高**。
+   - 采用C/S结构对于不同客户端需要开发不同的程序，而且软件的安装、调试和升级均要在**所有的客户机上进行**。
+   - B/S结构则不必在客户端进行安装及维护，系统维护员只需要**将服务器的软件升级到最新版本**，对于其他客户端，只需要重新登录系统就可以使用最新版本的软件了。
+
+2. 客户端负载
+
+   - C/S的客户端不仅负责与用于**交互、收集用户信息**，而且还需要完成**通过网络向服务器请求**对数据库信息进行处理工作。
+   - C/S的应用程序功能**越复杂**，客户端程序也就**越庞大**，对软件维护工作带来**很大的困难**。
+   - B/S结构的客户端把事务处理逻辑部分交给服务器，由**服务器进行处理**，**客户端**只需要进行**显示**。
+   - 但应用程序**服务器**的运行数据**负荷较重**，一旦服务器**发生”崩溃“**等问题，后果就**不堪设想**。（为此单位都有数据库存储服务器）
+
+3. 安全性
+
+   - C/S结构适用于**专人使用**的系统，可以通过严格的管理派发软件，达到保证系统安全的目的。为此**安全性比较高**
+   - B/S结构使用的**人数较多**，且不固定，相对**安全性低**一些。
