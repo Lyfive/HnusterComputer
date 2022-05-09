@@ -300,6 +300,14 @@ JSP主要由**指令标签、HTML语句、注释、嵌入Java代码、JSP动作�
 - page指令：定义整个JSP页面的相关属性，这些属性会在解析成Servlet时转换为对应的Java程序代码。
   - 格式： <%@ page  attr1 = "value1" attr2 = "value2"  %>
   - 属性： import 导包，pageEncoding 文件编码，contentType 设置页面文件类型（如"text/html")，include 导入其他文件(和CPP的include基本一致)
+- include指令：用于文件包含，该指令可以在JSP页面中包含另一个文件的内容。
+  - 格式：<%@ include file="filename" %>
+
+- taglib指令：用于加载用户自定义标签。
+  - 格式：<%@ taglib perfix="fix" uri="tagUriorDir" %>
+  - 属性：perfix用于设置加载自定义标签的前缀，uri属性用于指定自定义标签的描述符文件位置。
+
+
 - 嵌入Java代码
   - 格式 <%  JavaCode %>
 - 声明
@@ -975,3 +983,17 @@ mybatis是对jdbc的封装，它让数据库底层操作变的透明。mybatis�
 
    - C/S结构适用于**专人使用**的系统，可以通过严格的管理派发软件，达到保证系统安全的目的。为此**安全性比较高**
    - B/S结构使用的**人数较多**，且不固定，相对**安全性低**一些。
+
+#### 5.什么是Ajax?如何用Ajax实时更新前台页面的数据？
+
+Ajax是Asynchronous JavaScript and XML的缩写，意思是异步的JavaScript与XML。Ajax并不是一门新的语言或技术，它是JavaScript、XML、CSS、DOM等多种已有技术的组合，可以实现客户端的异步请求操作，进而在不需要刷新页面的情况下与服务器进行通信，减少了用户的等待时间，减轻了服务器和带宽的负担，提供更好的服务响应。
+
+Ajax可以通过XMLHttpRequest对象实现采用异步方式在后台发送请求。
+
+（1）初始化XMLHttpRequest对象。为了提高程序的兼容性，需要创建一个跨浏览器的XMLHttpRequest对象，并且判断XMLHttpRequest对象的实例是否成功，如果不成功，则给予提示。
+
+（2）为XMLHttpRequest对象指定一个回调函数，用于对返回结果进行处理。
+
+（3）创建一个与服务器的连接。在创建时，需要指定发送请求的方式（即GET或POST），以及设置是否采用异步方式发送请求。
+
+（4）向服务器发送请求。利用XMLHttpRequest对象的send()方法可以实现向服务器发送请求，该方法需要传递一个参数，如果发送的是GET请求，可以将该参数设置为null；如果发送的是POST请求，可以通过该参数指定要发送的请求参数。
