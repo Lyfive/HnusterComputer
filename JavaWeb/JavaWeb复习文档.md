@@ -127,6 +127,7 @@ HTML是一种**超文本语言**，在因特网上常见的网页制作**标注�
   - name属性：指定表单名称
   - onSubmit属性：指定点击触发事件
   - target属性：指定输入数据结构显示到哪个窗口。
+    - \_blank 新窗口；\_self 当前窗口；
 - \<input\>表单输入标记 [输入元素)](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/Input)
   - type属性：指定类型。（button按钮、checkbox复选框、password密码域、text文本域、submit按钮）
   - checkbox通过id指定一起，name指定选项
@@ -139,10 +140,10 @@ HTML是一种**超文本语言**，在因特网上常见的网页制作**标注�
   - wrap属性：是否自动换行
 - \<a\>\</a\> 超链接标记
   - href属性：指定连接页面
-  - url属性：指定url路径
-  - alt属性：指定图片无法显示时的文字
-- \<img /\> 图片标记
+  - target属性：指定如何打开链接（\_blank新页面，\_self当前页面
+- \<img\>\<img /\> 图片标记
   - src属性：指定图片链接
+  - alt属性：指定图片无法显示时的文字
 
 
 
@@ -335,7 +336,7 @@ JSP主要由**指令标签、HTML语句、注释、嵌入Java代码、JSP动作�
    - 方法
      - **获取参数值**：String str = request.getParameter("参数名")
      - **获取数组参数值**： String[] strs = request.getParameterValues("参数名")
-     - **获取参数列表**：String[] names = request.getParameterNames()
+     - **获取参数列表**：Enumeration names = request.getParameterNames()
      - 获取请求使用的协议：String protocol = request.getProtocol()
      - 获取报头： String header = request.getHeader("User-Agent")
      - 获取请求方法：String method = request.getMethod()
@@ -779,6 +780,7 @@ mybatis是对jdbc的封装，它让数据库底层操作变的透明。mybatis�
 10. **CSS：**css（层叠样式表）是W3C协会为弥补HTML在显示属性设定上的不足而制定的一套扩展样式标准。
 11. **Ajax（重点）**：ajax的意思是异步的javascript和xml，ajax并不是一门新的语言或技术，它是javascript、xml、css、dom等多种已有的技术的组合，可以实现客户端的异步请求操作，进而在不需要刷新页面的情况下与服务器进行通信，减少等待时间，减轻服务器和带宽的负担，提供更好的服务响应。
     - 简洁版：ajax是异步的javascript和xml，是由javascript、xml、css、dom等多种技术组合而成，使得不需要刷新页面的情况下与服务器交互，修改页面内容。可以减轻服务器负担、提升服务。
+12. **MIME（往年考过）：**多用途互联网邮件扩展类型。是设定某种[扩展名](https://baike.baidu.com/item/扩展名/103577)的[文件](https://baike.baidu.com/item/文件/6270998)用一种[应用程序](https://baike.baidu.com/item/应用程序/5985445)来打开的方式类型，当该扩展名文件被访问的时候，[浏览器](https://baike.baidu.com/item/浏览器/213911)会自动使用指定应用程序来打开。多用于指定一些客户端自定义的文件名，以及一些媒体文件打开方式。
 
 
 
