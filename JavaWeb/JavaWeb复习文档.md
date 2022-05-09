@@ -145,7 +145,27 @@ HTML是一种**超文本语言**，在因特网上常见的网页制作**标注�
   - src属性：指定图片链接
   - alt属性：指定图片无法显示时的文字
 
+**3、HTML5新特性（书上无）**
 
+1. 语义化标签
+
+2. 增强型表单包括属性以及元素
+
+3. 新增视频\<video\>和音频\<audio\>标签
+
+4. Canvas 图形
+
+5. 地理定位
+
+6. 拖放API
+
+7. SVG绘图
+
+8. Web Worker
+
+9. Web Storage
+
+10. Web Socket
 
 ***
 
@@ -294,19 +314,18 @@ JSP是由**Sun公司倡导**、许多公司参与而建立的**动态网页技�
 
 JSP主要由**指令标签、HTML语句、注释、嵌入Java代码、JSP动作标签**等5个元素组成。
 
+- 指令标签
+  - **page**指令：定义整个JSP页面的相关属性，这些属性会在解析成Servlet时转换为对应的Java程序代码。
+    - 格式： <%@ page  attr1 = "value1" attr2 = "value2"  %>
+    - 属性： import 导包，pageEncoding 文件编码，contentType 设置页面文件类型（如"text/html")，
 
+  - **include**指令：用于文件包含，该指令可以在JSP页面中包含另一个文件的内容。(和CPP的include基本一致)
+    - 格式：<%@ include file="filename" %>
 
-**4、指令标签**
+  - **taglib**指令：用于加载用户自定义标签。
+    - 格式：<%@ taglib perfix="fix" uri="tagUriorDir" %>
+    - 属性：perfix用于设置加载自定义标签的前缀，uri属性用于指定自定义标签的描述符文件位置。
 
-- page指令：定义整个JSP页面的相关属性，这些属性会在解析成Servlet时转换为对应的Java程序代码。
-  - 格式： <%@ page  attr1 = "value1" attr2 = "value2"  %>
-  - 属性： import 导包，pageEncoding 文件编码，contentType 设置页面文件类型（如"text/html")，include 导入其他文件(和CPP的include基本一致)
-- include指令：用于文件包含，该指令可以在JSP页面中包含另一个文件的内容。
-  - 格式：<%@ include file="filename" %>
-
-- taglib指令：用于加载用户自定义标签。
-  - 格式：<%@ taglib perfix="fix" uri="tagUriorDir" %>
-  - 属性：perfix用于设置加载自定义标签的前缀，uri属性用于指定自定义标签的描述符文件位置。
 
 
 - 嵌入Java代码
@@ -323,10 +342,23 @@ JSP主要由**指令标签、HTML语句、注释、嵌入Java代码、JSP动作�
   - JSP注释： <%-- 注释内容 --%>
   - 动态注释： 把JSP代码嵌入到HTML注释内，如 \<!--  <%= new Date() %> --\>
   - JSP内部注释和Java注释一致。 // 和 /* */
+- JSP动作标签（可能不怎么考，主要前两个）
+
+  - **\<jsp:include /\>**：页面被请求时插入文件
+
+    - page属性：导入文件的URL
+    - flush属性：导入资源前是否刷新
+
+  - **\<jsp:forward /\>**：将请求转发到另外一个页面
+
+    - page属性：转发至页面的URL
+
+  - [其他动作标签](https://www.runoob.com/jsp/jsp-actions.html)
 
 
 
-**5、JSP对象（重点）**
+
+**4、JSP对象（重点）**
 
 1. **request**对象
    - 作用域大小：一次请求

@@ -76,11 +76,11 @@
 
 1. 声明文件编码
 
-2. 3种
+2. 4种
 
-3. include
+3. jsp:include
 
-4.  
+4.  jsp:forward
 
 5. <%= %>
 
