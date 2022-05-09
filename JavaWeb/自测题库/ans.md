@@ -88,7 +88,7 @@
 
 7. application
 
-8. servlet
+8. request
 
 9. ```tex
    id参数的值为：001
