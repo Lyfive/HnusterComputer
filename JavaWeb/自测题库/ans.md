@@ -103,5 +103,56 @@
     9 10
     ```
 
-    
 
+### 第5章
+
+一、getParameter()、AC、AC、A、AB；C A A B D
+
+二、
+
+1. 初始化；运行；销毁
+
+2. doGet
+
+3. init
+
+4. ServletRequest,ServletResponse,FilterChain
+
+5. doPost、doGet、doPut、doDelete、doHead、doOption、doTrace
+
+6. filter-name,filter-class,init-param(filter-mapping 里面有filter-name,url-pattern,dispatcher)
+
+7. Servlet实例：MyServlet
+
+8. ```tex
+   执行init()
+   执行doFilter()
+   执行destroy()
+   ```
+
+9. 拦截客户端的请求与相应信息
+
+10. 传递给下一个过滤器
+
+### 第7章
+
+一、C A BC D D；ABD B C A ABD
+
+二、
+
+1. getConnection
+
+2. executeUpdate；executeQuery
+
+3. Driver、DriverManager、Connection、Statement、PreparedStatement、CallableStatement、ResultSet
+
+4. DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/test","root","123456")
+
+5. ```java
+   PreparedStatement pStmt = conn.preparedStatement("select * from stable_name where id = 1 and (name = ? or name = ?)");
+   pStmt.setString(1,"wgh");
+   pStmt.setString(2,"sk");
+   ResultSet rs = pStmt.executeQuery();
+   ```
+
+   
