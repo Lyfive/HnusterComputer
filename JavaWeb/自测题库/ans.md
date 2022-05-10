@@ -118,7 +118,7 @@
 
 4. ServletRequest,ServletResponse,FilterChain
 
-5. doPost、doGet、doPut、doDelete、doHead、doOption、doTrace
+5. doPost、doGet、doPut、doDelete、doHead、doOptions、doTrace
 
 6. filter-name,filter-class,init-param(filter-mapping 里面有filter-name,url-pattern,dispatcher)
 
@@ -130,13 +130,13 @@
    执行destroy()
    ```
 
-9. 拦截客户端的请求与相应信息
+9. 拦截客户端的请求与响应信息
 
 10. 传递给下一个过滤器
 
 ### 第7章
 
-一、C A BC D D；ABD B C A ABD
+一、C A BC D D；ABCD B C A ABD
 
 二、
 
