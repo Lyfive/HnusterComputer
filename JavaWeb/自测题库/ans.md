@@ -118,7 +118,7 @@
 
 4. ServletRequest,ServletResponse,FilterChain
 
-5. doPost、doGet、doPut、doDelete、doHead、doOptions、doTrace
+5. doPost()、doGet()、doPut()、doDelete()、doHead()、doOptions()、doTrace()
 
 6. filter-name,filter-class,init-param(filter-mapping 里面有filter-name,url-pattern,dispatcher)
 
@@ -146,7 +146,7 @@
 
 3. Driver、DriverManager、Connection、Statement、PreparedStatement、CallableStatement、ResultSet
 
-3. forName
+3. forName()
 
 3. Statement；PreparedStatement；CallableStatement
 
