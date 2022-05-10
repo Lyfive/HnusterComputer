@@ -22,7 +22,7 @@
 
 3. \<input type="submit" value="submit"\>
 
-4. \<br\>；\<p\>；\<title\>；\<center\>
+4. \<br\>；\<p\>；\<h1\>；\<center\>
 
 5. font-size: 16px
 
@@ -146,13 +146,18 @@
 
 3. Driver、DriverManager、Connection、Statement、PreparedStatement、CallableStatement、ResultSet
 
-4. DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/test","root","123456")
+3. forName
+
+3. Statement；PreparedStatement；CallableStatement
+
+6. DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/test","root","123456")
 
 5. ```java
-   PreparedStatement pStmt = conn.preparedStatement("select * from stable_name where id = 1 and (name = ? or name = ?)");
-   pStmt.setString(1,"wgh");
-   pStmt.setString(2,"sk");
+   PreparedStatement pStmt = conn.preparedStatement("select * from stable_name where id = ? and (name = ? or name = ?)");
+   pStmt.setString(1,"1");
+   pStmt.setString(2,"wgh");
+   pStmt.setString(3,"sk");
    ResultSet rs = pStmt.executeQuery();
    ```
-
+   
    

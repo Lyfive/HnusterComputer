@@ -321,12 +321,11 @@ JSP主要由**指令标签、HTML语句、注释、嵌入Java代码、JSP动作�
 
   - **include**指令：用于文件包含，该指令可以在JSP页面中包含另一个文件的内容。(和CPP的include基本一致)
     - 格式：<%@ include file="filename" %>
-
+    - 属性：file指定被包含文件路径
+    
   - **taglib**指令：用于加载用户自定义标签。
     - 格式：<%@ taglib perfix="fix" uri="tagUriorDir" %>
     - 属性：perfix用于设置加载自定义标签的前缀，uri属性用于指定自定义标签的描述符文件位置。
-
-
 
 - 嵌入Java代码
   - 格式 <%  JavaCode %>
