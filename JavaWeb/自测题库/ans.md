@@ -106,7 +106,7 @@
 
 ### 第5章
 
-一、getParameter()、AC、AC、A、AB；C A A B D
+一、getParameter()、AC、AC、C、AB；C A A B D
 
 二、
 
