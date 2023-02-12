@@ -1,7 +1,17 @@
 # HnusterComputer
-给摆烂人的福利，收录各专业老师公布的考试范围。<br>
+收录各专业老师公布的考试范围。<br>
 从书上知识点总结，自己手写的`复习文档`desi
 
 大部分资料都是从各方大佬获得，**优先感谢各路大佬**。
 
-手写的`复习材料`，如果各位愿意宣传的话也可以在发送的时候留一下作者我的名字啥的（嘻嘻）:happy:
+公开使用请注明作者名字😀
+
+下载到本地
+```bash
+git clone https://github.com/Lyfive/HnusterComputer.git
+```
+
+更新项目
+```bash
+git pull
+```
