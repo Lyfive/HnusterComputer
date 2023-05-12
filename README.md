@@ -6,6 +6,8 @@
 
 公开使用请注明作者名字😀
 
+**增加[release](https://github.com/Lyfive/HnusterComputer/releases)，用于单独科目下载**
+
 下载到本地
 ```bash
 git clone https://github.com/Lyfive/HnusterComputer.git
@@ -15,3 +17,4 @@ git clone https://github.com/Lyfive/HnusterComputer.git
 ```bash
 git pull
 ```
+
